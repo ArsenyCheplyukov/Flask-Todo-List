@@ -1,34 +1,36 @@
-body{
+body, html {
     margin: 0;
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-family: sans-serif;
+    background-color: lightblue;
 }
-.search {
-    width: 300px; /* Ширина поля с кнопкой */
-    border: 1px solid #000; /* Параметры рамки */
-    min-height: 20px; /* Минимальная высота */
+
+.content {
+    margin: 0 auto;
+    width: 400px;
 }
-.hr-dashed {
-    margin: 20px 0;
-    padding: 0;
-    height: 0;
-    border: none;
-    border-top: 2px dashed #ddd;
+
+table, td, th {
+    border: 1px solid #aaa;
 }
-p {
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
-/* рамка для поиска*/
-input[type="search"] {
-    border: none; /* Убираем рамку */
-    outline: none; /* Убираем свечение в Chrome и Safari */
-    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
-    width: 274px; /* Ширина поля */
-    vertical-align: middle; /* Выравнивание по середине */
+
+th {
+    height: 30px;
 }
-/* Кнопка поиск */
-input[type="submit"] {
-    width: 50px; /* Ширина кнопки */
-    height: 24px; /* Высота кнопки */
-    border: none; /* Убираем рамку */
-    background: url(pictures\SendButton.jpg) no-repeat 50% 50%; /* Параметры фона */
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
 }

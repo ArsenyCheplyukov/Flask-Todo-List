@@ -6,12 +6,14 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
+
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
     def __repr__(self):
-        return '<Task %r>' % self.id
+        return f'<Task {self.id}>'
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -42,6 +44,7 @@ def delete(id):
     except:
         return 'There was a problem deleting that task'
 
+
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     task = Todo.query.get_or_404(id)
@@ -58,4 +61,6 @@ def update(id):
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
